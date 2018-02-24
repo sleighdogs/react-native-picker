@@ -102,6 +102,19 @@ interface PickerOptions {
     pickerTitleColor?: number[]
 
     /**
+     * The color of the border
+     * 
+     * Accepts rgba values as an array
+     * [R, G, B, A]
+     * 
+     * Default is [20, 20, 20, 1]
+     * 
+     * @type {number[]}
+     * @memberof PickerOptions
+     */
+    pickerBorderColor?: number[]
+
+    /**
      * The background color of the toobar
      * 
      * Accepts rgba values as an array

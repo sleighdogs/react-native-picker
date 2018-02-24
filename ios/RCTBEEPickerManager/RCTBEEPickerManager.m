@@ -48,6 +48,7 @@ RCT_EXPORT_METHOD(_init:(NSDictionary *)indic){
     NSArray *pickerConfirmBtnColor=indic[@"pickerConfirmBtnColor"];
     NSArray *pickerCancelBtnColor=indic[@"pickerCancelBtnColor"];
     NSArray *pickerTitleColor=indic[@"pickerTitleColor"];
+    NSArray *pickerBorderColor=indic[@"pickerBorderColor"];
     NSArray *pickerToolBarBg=indic[@"pickerToolBarBg"];
     NSArray *pickerBg=indic[@"pickerBg"];
     NSArray *selectArry=indic[@"selectedValue"];
@@ -74,12 +75,12 @@ RCT_EXPORT_METHOD(_init:(NSDictionary *)indic){
     }];
 
     if ([[UIDevice currentDevice].systemVersion doubleValue] >= 9.0 ) {
-        self.height=250;
+        self.height=251;
     }else{
-        self.height=220;
+        self.height=221;
     }
     
-    self.pick=[[BzwPicker alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, self.height) dic:dataDic leftStr:pickerCancelBtnText centerStr:pickerTitleText rightStr:pickerConfirmBtnText topbgColor:pickerToolBarBg bottombgColor:pickerBg leftbtnbgColor:pickerCancelBtnColor rightbtnbgColor:pickerConfirmBtnColor centerbtnColor:pickerTitleColor selectValueArry:selectArry weightArry:weightArry pickerToolBarFontSize:pickerToolBarFontSize pickerFontSize:pickerFontSize pickerFontColor:pickerFontColor  pickerRowHeight: pickerRowHeight];
+    self.pick=[[BzwPicker alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, self.height) dic:dataDic leftStr:pickerCancelBtnText centerStr:pickerTitleText rightStr:pickerConfirmBtnText topbgColor:pickerToolBarBg bottombgColor:pickerBg leftbtnbgColor:pickerCancelBtnColor rightbtnbgColor:pickerConfirmBtnColor centerbtnColor:pickerTitleColor borderbgColor:pickerBorderColor selectValueArry:selectArry weightArry:weightArry pickerToolBarFontSize:pickerToolBarFontSize pickerFontSize:pickerFontSize pickerFontColor:pickerFontColor  pickerRowHeight: pickerRowHeight];
     
     _pick.bolock=^(NSDictionary *backinfoArry){
 
