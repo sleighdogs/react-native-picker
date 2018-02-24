@@ -75,9 +75,9 @@ RCT_EXPORT_METHOD(_init:(NSDictionary *)indic){
     }];
 
     if ([[UIDevice currentDevice].systemVersion doubleValue] >= 9.0 ) {
-        self.height=251;
+        self.height=252;
     }else{
-        self.height=221;
+        self.height=222;
     }
     
     self.pick=[[BzwPicker alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, self.height) dic:dataDic leftStr:pickerCancelBtnText centerStr:pickerTitleText rightStr:pickerConfirmBtnText topbgColor:pickerToolBarBg bottombgColor:pickerBg leftbtnbgColor:pickerCancelBtnColor rightbtnbgColor:pickerConfirmBtnColor centerbtnColor:pickerTitleColor borderbgColor:pickerBorderColor selectValueArry:selectArry weightArry:weightArry pickerToolBarFontSize:pickerToolBarFontSize pickerFontSize:pickerFontSize pickerFontColor:pickerFontColor  pickerRowHeight: pickerRowHeight];

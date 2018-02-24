@@ -89,7 +89,7 @@
     border.backgroundColor=[self colorWith:borderbgColor];
     [view addSubview:border];
 
-    self.pick = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 41, self.frame.size.width, self.frame.size.height - 41)];
+    self.pick = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 42, self.frame.size.width, self.frame.size.height - 42)];
     self.pick.delegate = self;
     self.pick.dataSource = self;
     self.pick.showsSelectionIndicator=YES;
