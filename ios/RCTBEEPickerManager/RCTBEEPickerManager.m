@@ -8,6 +8,7 @@
 
 #import "RCTBEEPickerManager.h"
 #import "BzwPicker.h"
+#import <UIKit/UIKit.h>
 #import <React/RCTEventDispatcher.h>
 
 @interface RCTBEEPickerManager()
@@ -121,7 +122,7 @@ RCT_EXPORT_METHOD(hide){
     if (self.pick) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [self.mask removeFromSuperView];
+//            [self.mask removeFromSuperView];
             
             [UIView animateWithDuration:.3 animations:^{
                 [_pick setFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, self.height)];
