@@ -13,7 +13,7 @@
 @interface RCTBEEPickerManager()
 
 @property(nonatomic,strong)BzwPicker *pick;
-@property(nonatomic,weak)UIView *mask;
+@property(nonatomic,strong)UIView *mask;
 @property(nonatomic,assign)float height;
 @property(nonatomic,weak)UIWindow * window;
 
