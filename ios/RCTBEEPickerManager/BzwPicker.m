@@ -86,7 +86,7 @@
     [view addSubview:cenLabel];
     
     UIView *border = [[UIView alloc] initWithFrame:CGRectMake(0,41, self.frame.size.width, 1)];
-    view.backgroundColor=[self colorWith:borderbgColor];
+    border.backgroundColor=[self colorWith:borderbgColor];
     [view addSubview:border];
 
     self.pick = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 41, self.frame.size.width, self.frame.size.height - 41)];
