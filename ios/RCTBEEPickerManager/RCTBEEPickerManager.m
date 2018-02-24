@@ -106,8 +106,9 @@ RCT_EXPORT_METHOD(show){
             
             self.mask = [[UIView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT)];
 //            self.mask.backgroundColor=[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.77];
-            self.mask.backgroundColor=[UIColor redColor];
-            [self.window addSubview:self.mask];
+            self.mask.backgroundColor=[UIColor blackColor];
+            self.mask.alpha = 0.46
+            [self.window insertSubview:self.mask belowSubview:self.pick];
             
             [UIView animateWithDuration:.3 animations:^{
                 [_pick setFrame:CGRectMake(0, SCREEN_HEIGHT-self.height, SCREEN_WIDTH, self.height)];
