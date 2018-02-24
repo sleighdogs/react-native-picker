@@ -13,6 +13,7 @@
 @interface RCTBEEPickerManager()
 
 @property(nonatomic,strong)BzwPicker *pick;
+@property(nonatomic,weak)UIView *mask;
 @property(nonatomic,assign)float height;
 @property(nonatomic,weak)UIWindow * window;
 
@@ -101,8 +102,12 @@ RCT_EXPORT_METHOD(show){
     if (self.pick) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            self.mask = [[UIView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            self.mask.backgroundColor=[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.77];
+            [self.window addSubview:mask];
+            
             [UIView animateWithDuration:.3 animations:^{
-
                 [_pick setFrame:CGRectMake(0, SCREEN_HEIGHT-self.height, SCREEN_WIDTH, self.height)];
 
             }];
@@ -114,6 +119,9 @@ RCT_EXPORT_METHOD(hide){
 
     if (self.pick) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.mask removeFromSuperView];
+            
             [UIView animateWithDuration:.3 animations:^{
                 [_pick setFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, self.height)];
             }];
