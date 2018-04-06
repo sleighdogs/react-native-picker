@@ -51,11 +51,10 @@
     self.leftBtn.frame = CGRectMake(0, 0, 90, 40);
     [self.leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 10.0, 0, 0)];
     [self.leftBtn setTitle:self.leftStr forState:UIControlStateNormal];
-    [self.leftBtn setFont:[UIFont systemFontOfSize:[_pickerToolBarFontSize integerValue]]];
+    [self.leftBtn setFont:[UIFont boldSystemFontOfSize:[_pickerToolBarFontSize integerValue]]];
+    [self.leftBtn setTitleColor:[self colorWith:leftbtnbgColor] forState:UIControlStateNormal];
     self.leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [self.leftBtn addTarget:self action:@selector(cancleAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.leftBtn setTitleColor:[self colorWith:leftbtnbgColor] forState:UIControlStateNormal];
     
     [view addSubview:self.leftBtn];
     
@@ -65,13 +64,12 @@
     self.rightBtn.frame = CGRectMake(view.frame.size.width-90,0, 90, 40);
     [self.rightBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10.0)];
     [self.rightBtn setTitle:self.rightStr forState:UIControlStateNormal];
-    self.rightBtn.contentHorizontalAlignment=UIControlContentHorizontalAlignmentRight;
-    
+    [self.rightBtn setFont:[UIFont boldSystemFontOfSize:[_pickerToolBarFontSize integerValue]]];
     [self.rightBtn setTitleColor:[self colorWith:rightbtnbgColor] forState:UIControlStateNormal];
-    
-    [view addSubview:self.rightBtn];
-    [self.rightBtn setFont:[UIFont systemFontOfSize:[_pickerToolBarFontSize integerValue]]];
+    self.rightBtn.contentHorizontalAlignment=UIControlContentHorizontalAlignmentRight;
     [self.rightBtn addTarget:self action:@selector(cfirmAction) forControlEvents:UIControlEventTouchUpInside];  
+
+    [view addSubview:self.rightBtn]; 
     
     UILabel *cenLabel=[[UILabel alloc]initWithFrame:CGRectMake(90, 5, SCREEN_WIDTH-180, 30)];
     
